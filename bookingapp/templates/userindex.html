@@ -1,0 +1,807 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ogani | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    
+
+<style>
+      .time-container {
+            max-width: 300px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .time-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease;
+        }
+
+        .time-input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .output {
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: center;
+            color: #103e3e;
+        }
+        .my-button {
+        background-color: rgb(6, 74, 85);
+        border-radius: 25px;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Adds smooth transition */
+    }
+
+    .my-button:hover {
+        background-color: rgb(6, 58, 67); /* Darker shade on hover */
+        transform: scale(1.05); /* Slightly increase button size */
+    }
+    
+
+
+
+        
+        .site-btn {
+        background-color: rgb(6, 74, 85);
+        border-radius: 25px;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Adds smooth transition */
+    }
+
+    .site-btn:hover {
+        background-color: rgb(6, 58, 67); /* Darker shade on hover */
+        transform: scale(1.05); /* Slightly increase button size */
+    }
+    
+    .primary-btn {
+    background-color: rgb(0, 140, 182); /* Set the background color to red */
+    color: white; /* Ensure the text is visible */
+    padding: 10px 20px; /* Add padding for button size */
+    border: none; /* Remove any borders */
+    border-radius: 5px; /* Optional: Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    display: inline-block; /* Ensure proper button alignment */
+    text-align: center;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background-color: rgb(213, 56, 142); /* Darken the color on hover */
+    color: white; /* Keep the text color consistent */
+    
+    transform: scale(1.1);
+}
+
+    .types {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%; /* Ensures it takes full height of the parent div if needed */
+    }
+    .types h4 {
+        margin-bottom: 5px; /* Add spacing between the heading and the span */
+    }
+    .menu {
+    display: flex;
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.menu li {
+    margin-right: 20px; /* Add space between items */
+}
+
+.menu li a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit the text color */
+}
+
+.menu li.active a {
+    font-weight: bold; /* Highlight the active item */
+}
+.menu li a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit the text color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+
+
+.menu li.active a {
+    font-weight: bold; /* Highlight the active item */
+}
+.header__menu .menu li a:hover {
+    color: rgb(10, 95, 131) !important; /* Use !important as a last resort */
+}
+/* Dropdown toggle container */
+.hero__categories {
+    position: relative;
+    width: 100%;
+}
+
+/* Dropdown menu styling */
+#dropdown-menu {
+    position: absolute;
+    top: 50px; /* Adjust position below toggle */
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Dropdown items */
+#dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: rgb(1, 158, 189);
+    text-decoration: none;
+    background-color: #fff;
+}
+
+/* Hover effect for dropdown items */
+#dropdown-menu li a:hover {
+    background-color: rgb(176, 224, 231);
+    color: #fff;
+}
+
+/* Smooth transition */
+#dropdown-menu {
+    transition: all 0.3s ease-in-out;
+}
+.image-container {
+    position: relative; /* Allows positioning of the hover text */
+    display: inline-block; /* Ensures the container wraps around the image */
+    width: 500px; /* Set width for the container (or use the image's width) */
+    height: 250px; /* Set height for the container (or use the image's height) */
+}
+
+.image-container img {
+    display: block;
+    width: 100%; /* Image fills the container */
+    height: 100%; /* Image fills the container */
+}
+.image-container .hover-text {
+    position: absolute; /* Positioned relative to the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire container */
+    height: 100%; /* Cover the entire container */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    color: white; /* White text color */
+    display: flex; /* Enables centering text with Flexbox */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    font-size: 18px; /* Adjust font size */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+    text-align: center; /* Center text alignment */
+    pointer-events: none; /* Prevent the text from blocking hover on the image */
+}
+
+/* Show the hover text on mouse over */
+.image-container:hover .hover-text {
+    opacity: 1; /* Make the overlay and text visible */
+}
+
+/* Show the hover text on mouse over */
+.image-container:hover .hover-text {
+    opacity: 1; /* Make the text visible */
+}
+/* Container holding the carts */
+.cart-container {
+  display: flex;              /* Align items in a row */
+  justify-content: space-between;  /* Space items evenly across the row */
+  align-items: center;        /* Vertically center items */
+  margin: 20px;
+  flex-wrap: wrap;            /* Allow items to wrap if the screen is small */
+}
+
+/* Individual cart styling */
+.cart {
+  text-align: center;
+  padding: 20px;
+  border: -2px solid #ccc;
+  border-radius: 8px;
+  width: 150px;              /* Set width of each cart */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Icon styling */
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Text styling */
+.text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Hover effect for carts */
+.cart:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Make the carts responsive on smaller screens */
+@media (max-width: 768px) {
+  .cart-container {
+    justify-content: space-around; /* Adjust alignment for small screens */
+  }
+
+  .cart {
+    width: 120px; /* Reduce width on smaller screens */
+  }
+}
+.my-button {
+            background-color: #4CAF50; /* Initial background color */
+            color: white; /* Text color */
+            padding: 15px 32px; /* Padding */
+            border: none; /* Remove border */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+        }
+
+        /* Hover effect */
+        .my-button:hover {
+            background-color: #021819; /* Darker color on hover */
+        }
+        .image-container {
+    position: relative; /* Establish positioning context for the overlay */
+    display: inline-block; /* Wrap content */
+    width: 50%; /* Match the width of the image */
+    height: 50%; /* Match the height of the image */
+}
+
+.image-container img {
+    width: 100%; /* Ensure image fits the container */
+    height: 100%; /* Maintain aspect ratio */
+    display: block; /* Remove default padding/margins */
+}
+
+.overlay-text {
+    position: absolute; /* Overlay text relative to the container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Align perfectly at center */
+    color: white; /* Text color for contrast */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text stand out */
+    text-align: center; /* Center align the text */
+    background-color: rgba(29, 28, 28, 0.5); /* Optional: Add a semi-transparent background for better readability */
+    padding: 5px 10px; /* Add padding around the text */
+    border-radius: 5px; /* Optional: Rounded corners for text background */
+}
+.image-container {
+    display: inline-block; /* Keeps the container inline */
+    text-align: center; /* Centers the text below the image */
+    width: auto; /* Allow flexibility for the image size */
+}
+
+.service-image {
+    width: 100%; /* Adjust this percentage for desired scaling */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Optional: Set a maximum width to prevent it from becoming too large */
+}
+
+.overlay-text {
+    margin-top: 10px; /* Space between the image and text */
+    font-size: 18px; /* Increase font size for better visibility */
+    font-weight: bold; /* Make the text bold */
+    color: rgb(255, 255, 255); /* Set text color */
+}
+
+
+</style>    
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
+        </div>
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span></span></a></li>
+            </ul>
+            <div class="header__cart__price">item: <span>$150.00</span></div>
+        </div>
+        
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./shop-grid.html">About</a></li>
+                <li><a href="./shop-grid.html">Login</a></li>
+                <li><a href="./shop-grid.html">Branches</a></li>
+                <li><a href="#">Pages</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="./shop-details.html">Shop Details</a></li>
+                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                        <li><a href="./checkout.html">Check Out</a></li>
+                        <li><a href="./blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header__top__right__social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        </div>
+       
+    </div>
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+    <header style="position: relative !important;" class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> beautyfly@bt.com</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img height="80" width="80" src="{% static 'img/IMG_4630 (1).webp' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul class="menu">
+                            <li class="active"><a style="color: rgb(0, 115, 115);" href="{% url 'userindex' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            {% if 'u_id' in request.session %}
+                            <li><a href="#">Pages</a>
+                                <ul style="background-color: white;" class="header__menu__dropdown">
+                                    <li><a style="color: rgb(0, 0, 0);" href="{% url 'branch' %}"><b>BRANCHES</b></a></li>
+                                    <li><a style="color: rgb(0, 0, 0);" href="{% url 'salons' category='all' %}"><b>SALONS</b></a></li>
+                                    <li><a style="color: rgb(0, 0, 0);" href="{% url 'services' cat='all' %}"><b>SERVICES</b></a></li>
+                                    <li><a style="color: rgb(0, 0, 0);" href="{% url 'history' %}"><b>BOOKING HISTORY</b></a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                           
+                            <li>
+                                <a href="" style="font-weight: bold; color: #085b5e; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
+                                  
+                                  Welcome!<i class="fas fa-user-circle" style="margin-right: 5px;"></i>{{ request.session.name_u }}
+                                </a>
+                              </li>
+                            <li><a href="{% url 'userlogout' %}">Logout</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            
+                            
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+                
+                
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div 
+                            id="dropdown-toggle" 
+                            style="cursor: pointer; background-color: rgb(1, 158, 189); color: white; padding: 10px 20px; border-radius: 5px; display: flex; align-items: center; justify-content: space-between;">
+                            <span><i class="fa fa-bars"></i>  Pages</span>
+                            <i id="toggle-icon" class="fa fa-chevron-down"></i>
+                        </div>
+                        <ul id="dropdown-menu" style="list-style: none; padding: 0; margin: 0; border: 1px solid #ddd; border-radius: 5px; background-color: #fff;">
+                            
+                            <li><a href="{% url 'about' %}" style="padding: 10px 15px; display: block; color: rgb(4, 43, 50); text-decoration: none;">About</a></li>
+                            <li><a href="{% url 'contact' %}" style="padding: 10px 15px; display: block; color: rgb(3, 42, 49); text-decoration: none;">Contact</a></li>
+                            <li><a href="{% url 'register' %}" style="padding: 10px 15px; display: block; color: rgb(4, 52, 62); text-decoration: none;">Register</a></li>
+                            {% if 'u_id' in request.session %}
+                            <li><a href="{% url 'branch' %}" style="padding: 10px 15px; display: block; color: rgb(4, 52, 62); text-decoration: none;">Branches</a></li>
+                            <li><a href="{% url 'salons' category='all' %}" style="padding: 10px 15px; display: block; color: rgb(4, 52, 62); text-decoration: none;">Salons</a></li>
+                            <li><a href="{% url 'services' cat='all' %}" style="padding: 10px 15px; display: block; color: rgb(4, 52, 62); text-decoration: none;">Services</a></li>
+                            <li><a href="{% url 'history' %}" style="padding: 10px 15px; display: block; color: rgb(4, 52, 62); text-decoration: none;">Booking History</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="col-lg-9">
+                    
+                    <div class="hero__item set-bg" data-setbg="{% static 'img/pexels-pexx.jpg' %}">
+                        
+                        
+                        <div class="hero__text">
+                            <div class="blur-overlay"></div>
+                            <span style="color: rgb(108, 204, 255);">Beautyfly</span>
+                            <h2 style="color: rgb(255, 255, 255);">Book Your Parlor<br />here</h2>
+                            {% if 'u_id' in request.session %}
+                            <a href="{% url 'services' cat='all' %}" class="primary-btn">BOOK NOW</a>
+                            {% else %}
+                            <a href="{% url 'login' %}" class="primary-btn">Join Us</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br><br>
+    <!-- Hero Section End -->
+
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="text-align: center;color: rgb(37, 36, 36);"><b>Our Branches: Your Gateway to Glamour</b></h><br><br><br>
+                    
+                </div>
+            </div>
+            <section class="categories">
+                <div class="container">
+                    <div class="row">
+                        <div class="categories__slider owl-carousel">
+                            {% for i in data %}
+                            <div class="col-lg-3">
+                                <div class="categories__item set-bg" data-setbg={{i.image.url}}>
+                                    {% if 'u_id' in request.session %}
+                                    <h5><a href="{% url 'salons' category=i.name %}">{{i.name}}</a></h5>
+                                    {% else %}
+                                    <h5><a href="">{{i.name}}</a></h5>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section><br><br><br><br>
+
+    <!-- Categories Section Begin -->
+    <h2 style="text-align: center;color: rgb(37, 36, 36);"><b>Top Salons for Your Perfect Look</b></h2><br><br><br>
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+                    {% for i in cata %}
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg={{i.image.url}}>
+                            {% if 'u_id' in request.session %}
+                            <h5><a href="{% url 'services' cat=i.name %}">{{i.name}}</a></h5>
+                            {% else %}
+                            <h5><a href="">{{i.name}}</a></h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section><br><br><br>
+    
+    <!-- Categories Section End -->
+
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="text-align: center;color: rgb(37, 36, 36);"><b>Unlock Your Glow with Our Salon Services</b></h><br><br><br>
+                    
+                </div>
+            </div>
+            <section class="categories">
+                <div class="container">
+                    <div class="row">
+                        <div class="categories__slider owl-carousel">
+                            {% for i in cat %}
+                            <div class="col-lg-3">
+                                <div class="categories__item set-bg" data-setbg={{i.image.url}}>
+                                    {% if 'u_id' in request.session %}
+                                    <h5><a href="{% url 'single' id=i.id %}">{{i.servicename}}</a></h5>
+                                    {% else %}
+                                    <h5><a href="">{{i.servicename}}</a></h5>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section><br><br><br><br><br>
+    <!-- Featured Section End -->
+
+    <!-- Banner Begin -->
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        
+                        <img style="width: 550px;height: 250px;" src="{% static 'img/mr.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        <div class="image-container">
+                        <img style="width: 500px;height: 250px;" src="{% static 'img/rr.jpg' %}" alt="">
+                        <div class="hover-text">GET READY TO SMILE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br><br><b></b>
+    <!-- Banner End -->
+
+    <section class="section" id="explore">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <h2 style="color: rgb(54, 52, 52);"><b>Explore Our Services</b></h2><br><br>
+                        <p>Discover the world of beauty and convenience with our salon booking platform! From luxurious hair treatments and soothing spa sessions to flawless makeup and personalized skincare, we bring the best beauty services right to your fingertips.</p><br>
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i><br>
+                            <i><b style="color: rgb(43, 40, 40);">"From Hair to Nails, We’ve Got You Covered"</b></i>
+                        </div><br>
+                        <p> Explore a curated selection of top-rated parlors, compare services, and book your perfect appointment—all in one place. Whether you're looking for a quick touch-up or a full day of pampering, we’re here to make your beauty journey seamless and stress-free. Start exploring today and let us help you look and feel your best!".</p>
+                        <p>Start exploring today and let us help you look and feel your best!"</p>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="types">
+                                    <h4 style="color: rgb(53, 50, 50);"><b>Pamper Yourself</b></h4>
+                                    <i>Find Your Dream Salon</i>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="first-image">
+                                    <img src="{% static 'assets/images/xx.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="second-image">
+                                    <img src="{% static 'assets/images/ppp.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="types">
+                                    <h4 style="color: rgb(53, 50, 50);"><b>From Head to Toe</b></h4>
+                                    <i>Beauty at Its Best</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br><br><br>
+   
+    <div class="container-fluid">
+    <div class="cart-container">
+        <div class="cart">
+          <i class="icon">🔒</i>
+          <p class="text">Safe Booking</p>
+        </div>
+        <div class="cart">
+          <i class="icon">🕒</i>
+          <p class="text">24 hr Support</p>
+        </div>
+        <div class="cart">
+          <i class="icon">💼</i>
+          <p class="text">100+ services</p>
+        </div>
+        <div class="cart">
+          <i class="icon">💅</i>
+          <p class="text">Expert Salons</p>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    <footer style="background-color: rgb(222, 244, 247);" class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img height="80" width="80" src="{% static 'img/IMG_4630 (1).webp' %}" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: beautifly@bt.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'about' %}">About Our Website</a></li>
+                            
+                            {% if 'u_id' in request.session %}
+                            <li><a href="{% url 'services' cat='all' %}">Secure Booking</a></li>
+                            <li><a href="{% url 'history' %}">Booking infomation</a></li>
+                            <li><a href="{% url 'branch' %}">Branches</a></li>
+                            <li><a href="{% url 'services' cat='all' %}">Our Services</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">Secure Booking</a></li>
+                            <li><a href="{% url 'login' %}">Booking infomation</a></li>
+                            <li><a href="{% url 'login' %}">Branches</a></li>
+                            <li><a href="{% url 'login' %}">Our Services</a></li>
+                            
+                            {% endif %}
+                            <li><a href="{% url 'contact' %}">Our Sitemap</a></li>
+
+                        </ul>
+                        <ul>
+                            <li><a href="{% url 'about' %}">Who We Are</a></li>
+                            
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                {% if 'u_id' in request.session %}
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Discover the convenience of scheduling your beauty appointments anytime, anywhere.</h6>
+                        <p>Our platform connects you to the finest beauty parlors, offering a variety of services tailored to your style and preferences.</p>
+                       
+                       
+                        
+                    </div>
+                </div>
+                {% else %}
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Log in to begin your journey</h6>
+                        <p>Login to access your personalized experience.</p>
+                       
+                        <a href="{% url 'login' %}"><button class="my-button" style="background-color: #1a91b9; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-size: 16px;"><i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i>
+                            Login Now
+
+                        </button>
+                       
+                        
+                    </div>
+                </div>{% endif %}
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        
+                            <div class="footer__copyright__payment"><img src="{% static 'img/payment-item.png' %}" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/dropdown.js' %}"></script>
+    <script src="{% static 'path/to/jquery.min.js' %}"></script>
+    <script src="{% static 'path/to/owl.carousel.min.js' %}"></script>
+ <script>
+        document.getElementById("timePicker").addEventListener("input", function () {
+            const timeValue = this.value; // Get the time value in 24-hour format
+            if (timeValue) {
+                const [hours, minutes] = timeValue.split(":").map(Number); // Split into hours and minutes
+                const isAM = hours < 12; // Determine if it's AM or PM
+                const standardHours = hours % 12 || 12; // Convert to 12-hour format (0 becomes 12)
+                const period = isAM ? "AM" : "PM";
+                document.getElementById("timeOutput").textContent = `Selected Time: ${standardHours}:${minutes.toString().padStart(2, '0')} ${period}`;
+            } else {
+                document.getElementById("timeOutput").textContent = "";
+            }
+        });
+    </script>
+   
+    
+
+</body>
+
+</html>

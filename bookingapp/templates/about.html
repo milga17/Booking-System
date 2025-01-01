@@ -1,0 +1,359 @@
+{% extends 'userindex.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Hexashop - About Page</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-hexashop.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+<style>
+.page-heading.about-page-heading {
+    position: relative;
+}
+
+.page-heading.about-page-heading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+    z-index: 1;
+}
+
+
+
+.page-heading.about-page-heading .inner-content {
+    position: relative;
+    z-index: 2; /* Ensures text appears above the dimmed image */
+    color: rgb(209, 174, 174); /* Ensures text is readable (adjust color as needed) */
+    text-align: center; /* Optional: Aligns the text at the center */
+    padding-top: 50px; /* Optional: Adjust padding as needed */
+}
+.icon-style {
+    font-size: 24px; /* Increase the size of the icon */
+    color: black; /* Set the icon color to black */
+    margin-right: 10px; /* Add spacing between the icon and the text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation for hover effects */
+}
+
+.icon-style:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+    color: darkgray; /* Change the color on hover */
+}
+
+.main-dark-button {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Center-align icon and text */
+    text-decoration: none; /* Remove underline from link */
+    font-size: 18px; /* Set text size */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Set the text color */
+    padding: 10px 20px; /* Add padding for a button-like appearance */
+    border: 2px solid black; /* Add a border */
+    border-radius: 5px; /* Make the corners rounded */
+    background-color: transparent; /* Transparent background */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth hover effects */
+}
+
+.main-dark-button:hover {
+    background-color: black; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    border-color: black; /* Keep the border consistent */
+}
+
+
+</style>
+    </head>
+    
+    <body>
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+   
+    <div style="margin-top: 25px;" class="page-heading about-page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>About Us</h2>
+                        <span>where style, care &amp; convenience meet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** About Area Starts ***** -->
+    <div class="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-image">
+                        <img src="{% static 'assets/images/imgb.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <h4>About Us &amp; Our Skills</h4>
+                        <span>Welcome to Beautifly, your trusted partner in beauty and self-care! We are a dedicated platform connecting you to the finest salons and beauty professionals in your area</span>
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i><p>With just a few clicks, discover and book premium beauty treatments that fit your schedule and style.</p>
+                        </div>
+                        <p>Our mission is to make beauty services effortless, accessible, and tailored to your needs.
+                            A curated selection of the best beauty parlors offering hair, makeup, skincare, and more.User-friendly tools to schedule appointments at your convenience.Smart features to help you find services that match your preferences.Hassle-free and safe payment options for a stress-free experience.
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** About Area Ends ***** -->
+
+    <!-- ***** Our Team Area Starts ***** -->
+    <section class="our-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Our Amazing Team</h2>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/images/team-member-01.jpg' %}">
+                        </div>
+                        <div class="down-content">
+                            <h4>Eleven</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/images/team-member-02.jpg' %}">
+                        </div>
+                        <div class="down-content">
+                            <h4>Lucas</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/images/team-member-03.jpg' %}">
+                        </div>
+                        <div class="down-content">
+                            <h4>Dustin</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Our Team Area Ends ***** -->
+
+    <!-- ***** Services Area Starts ***** -->
+    <section class="our-services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Our Services</h2>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>Seamless Booking</h4>
+                        <p>User-friendly tools to schedule appointments at your convenience.</p>
+                        <img src="{% static 'assets/images/mm.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>Expert Salon Selections</h4>
+                        <p>A curated selection of the best beauty parlors offering hair, makeup, skincare, and more</p>
+                        <img src="{% static 'assets/images/ew.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>Exclusive Offers & Deals</h4>
+                        <p>Enjoy special promotions and discounts from top salons and beauty professionals.
+                            </p>
+                        <img src="{% static 'assets/images/pw.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Services Area Ends ***** -->
+
+    <!-- ***** Subscribe Area Starts ***** -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>By Registering To Our Website You Can Get Seamless booking and Offers</h2>
+                        
+                    </div>
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                            
+                             
+                          <div class="col-lg-2">
+                            <fieldset>
+                                <a href="{% url 'register' %}" style="margin-left: 300px;" class="main-dark-button">
+                                    <i class="fa fa-user-plus icon-style"></i>
+                                </a>
+                            </fieldset>
+                            
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul>
+                                <li>Store Location:<br><span>Sunny Isles Beach, FL 33160, United States</span></li>
+                                <li>Phone:<br><span>010-020-0340</span></li>
+                                <li>Office Location:<br><span>North Miami Beach</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li>Work Hours:<br><span>24 hours</span></li>
+                                <li>Email:<br><span>info@company.com</span></li>
+                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Subscribe Area Ends ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    
+
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+    <script src="{% static 'assets/js/datepicker.js' %}"></script>
+    <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/imgfix.min.js' %}"></script> 
+    <script src="{% static 'assets/js/slick.js' %}"></script> 
+    <script src="{% static 'assets/js/lightbox.js' %}"></script> 
+    <script src="{% static 'assets/js/isotope.js' %}"></script> 
+    
+    <!-- Global Init -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+
+</html>
+{% endblock %}

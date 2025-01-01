@@ -1,0 +1,86 @@
+{% extends 'userindex.html' %}
+{% block content %}
+{% load static %}
+<br>
+<h3 style="text-align: center;color: rgb(9, 100, 100);"><b>BOOKING HISTORY</b></h3><br><br>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <table>
+                        <thead>
+                            <tr style="width: 150px;height: 50px;">
+                                <th style="width: 150px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ded4d4;text-align: center;">Name</th>
+                                <th style="width: 250px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ddd;text-align: center ">Email</th>
+                                
+                                <th style="width: 250px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ddd;text-align: center ">Phone Number</th>
+                                
+                                <th style="width: 150px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ddd;text-align: center ">Service</th>
+                                <th style="width: 150px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ddd;text-align: center ">Price</th>
+                                <th style="width: 150px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ddd;text-align: center "> Date</th>
+                                <th style="width: 150px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ddd;text-align: center "> Time</th>
+                                <th style="width: 250px;height: 50px;font-size: 20px;background-color: #e2fad6;border: 1px solid #ddd;text-align: center ">Status</th>
+                               
+                            </tr>
+                        </thead>
+                        
+             
+
+                        
+                        <tbody>
+                            {% for i in data %}
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="img/cart/cart-1.jpg" alt="">
+                                    <h5 style="text-align: center;">{{i.userid.name}}</h5>
+                                </td>
+                                <td style="text-align: center;" class="shoping__cart__price">
+                                    {{i.userid.email}}
+                                </td>
+                                
+                                <td style="text-align: center;" class="shoping__cart__price">
+                                    {{i.userid.phone}}
+                                </td>
+                                <td style="color: black; padding: 10px; text-align: center;">
+                                    <div class="image-container">
+                                        <img src="{{i.serviceid.image.url}}" alt="" style="height: 600%; width: 600%;">
+                                        <div class="overlay-text">{{i.serviceid.servicename}}</div>
+                                    </div>
+                                </td>
+                                
+                            
+                                <td style="text-align: center;" class="shoping__cart__price">
+                                    <b>$</b>{{i.serviceid.price}}
+                                </td>
+                                <td style="text-align: center;" class="shoping__cart__price">
+                                    {{i.date}}
+                                </td>
+                                <td style="text-align: center;" class="shoping__cart__price">
+                                   {{i.time}}
+                                </td>
+                                <td>
+                                    {% if i.status == 0 %}
+                        <p style="text-align: center;color: rgb(133, 133, 10);"><b>Waiting</b></p>
+                        {% elif i.status == 1 %}
+                        <p style="color: green;text-align: center;"><b>Approved</b></p>
+                        {% elif i.status == 2 %}
+                        <p style="color: red;text-align: center;"><b>Declined</b></p>
+                        {% endif %}
+                                </td>
+                                
+                            </tr>
+                           
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+            </div>
+            
+       
+  
+</section><br><br><br><br><br><br>
+{% endblock %}

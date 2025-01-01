@@ -1,0 +1,125 @@
+{% extends 'userindex.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ogani | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    
+
+    <!-- Header Section Begin -->
+   
+   
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+   
+
+    <!-- Hero Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+   
+    <!-- Breadcrumb Section End -->
+
+    <!-- Contact Section Begin -->
+    
+    <!-- Contact Section End -->
+
+    <!-- Map Begin -->
+
+    <!-- Map End -->
+
+    <!-- Contact Form Begin -->
+    <div style="margin-top: -50px;" class="contact-form spad">
+        <div class="container">
+            {% for i in data %}
+            <div class="row">
+        <div class="col-lg-12">
+            <div class="contact__form__title">
+                <h2 style="color: rgb(6, 68, 67);">{{ i.servicename }}</h2>
+                <span style="color: rgb(82, 78, 78);">salon:<p style="color:rgb(9, 102, 111)"><b>{{ i.salonname }}</b></p></span>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+            {% for i in data %}
+            <form action="{% url 'bookdata' id=i.id %}" style="border: -2px;box-shadow:0 5px 12px rgba(0, 0, 0, 0.15);padding: 10px;" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    
+                    <div class="col-lg-6 col-md-6">
+                        <input style="color: rgb(63, 60, 60);font-size: 18px;font-weight: 600;" type="text" name="name" value="{{ request.session.name_u }}" placeholder="Your name">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <input style="color: rgb(63, 60, 60);font-size: 18px;font-weight: 600;" type="text" name="email" value="{{ request.session.email_u }}" placeholder="Your Email">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <input style="color: rgb(63, 60, 60);font-size: 18px;font-weight: 600;" type="number" name="number" value="{{ request.session.phonenumber_u }}" placeholder="Phone number">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <input style="color: rgb(63, 60, 60);font-size: 18px;font-weight: 600;" type="date" name="date" placeholder="Date">
+                    </div>
+                    <div class="col-lg-6 col-md-6 time-container">
+                        <input style="color: rgb(63, 60, 60);font-size: 18px;font-weight: 600;" 
+                            type="time" 
+                            name="time" 
+                            class="time-input" 
+                            id="timePicker" 
+                            placeholder="Select a time (HH:MM)">
+                        <div class="output" id="timeOutput"></div>
+                    </div>
+                    <br><br><br><br>
+                    <div class="col-lg-12 text-center">
+                        
+                        <button style="border-radius: 25px;background-color: rgb(14, 123, 140);" type="submit" class="site-btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>{% endfor %}
+
+    <!-- Contact Form End -->
+
+    <!-- Footer Section Begin -->
+ 
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+
+</body>
+
+</html>
+{% endblock %}

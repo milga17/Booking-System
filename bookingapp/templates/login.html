@@ -1,0 +1,140 @@
+{% extends 'userindex.html' %}
+{% block content %}
+{% load static %}
+<br><br>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>pillloMart</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .creat_account {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Adds space between checkbox and label */
+}
+
+.creat_account input[type="checkbox"] {
+    margin: 0; /* Ensure no default margin from the browser */
+}
+
+.creat_account label {
+    margin: 0;
+    font-size: 14px; /* Adjust font size for proper alignment */
+    cursor: pointer; /* Makes it clickable */
+}
+/* Style for the Register Button */
+.btn_register {
+    height: 50px;
+    width: 25%;
+    border-radius: 6px;
+    border: 1px solid rgb(255, 174, 232);
+    background-color: rgb(238, 97, 172);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn_register:hover {
+    background-color: rgb(255, 255, 255); /* Hover background color */
+    color: rgb(226, 27, 143); /* Hover text color */
+    transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+/* Style for the Log In Button */
+.btn_login {
+    height: 50px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgb(232, 72, 187);
+    color: rgb(213, 39, 135); /* White text */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn_login:hover {
+    background-color: rgb(168, 88, 158); /* Darker blue on hover */
+    color: rgb(255, 255, 255); /* White text color */
+    transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+
+    </style>
+</head><br><br><br>
+<section class="breadcrumb-section set-bg" data-setbg ="{% static 'img/pexels-bg.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>LOGIN</h2>
+                    <div class="breadcrumb__option">
+                        <a href="./index.html">Home</a>
+                        <span>LOGIN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><br><br><br><br><br><br>
+<section class="login_part section_padding">
+    <div class="container">
+        <div class="row align-items-center g-5"> <!-- Added 'g-5' to control spacing between columns -->
+            <div style="min-height: 450px;background-image:linear-gradient(rgb(161, 3, 88),rgb(241, 122, 179))" class="col-lg-6 col-md-6">
+                <div class="login_part_text text-center">
+                    <div class="login_part_text_iner"><br><br><br><br><br><br>
+                        <h2 style="color: white;"><b>New to our Website?</b></h2><br>
+                        <p style="color: white;">There are advances being made in science and technology
+                            every day, and a good example of this is the</p><br><br>
+                            <a href="{% url 'register' %}"><button type="submit" value="submit" class="btn_register">
+                                Register Here
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        <h3 style="margin-top: 100px;color: rgb(126, 7, 92);"><b>Welcome Back!<br>
+                            Please Sign in now</b></h3><br>
+                        <form class="row contact_form" action="{% url 'publicdata' %}" method="post" novalidate="novalidate" autocomplete="off">
+                            {% csrf_token %}
+                            <span style="color: red;margin-left: 200px;"><b>{{msg}}</b></span><br>
+                            <div class="col-md-12 form-group p_star">
+                                <input type="text" class="form-control" id="name" name="name" value="" placeholder="email" autocomplete="off">
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" autocomplete="off">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                
+                                <button type="submit" value="submit" class="btn_login">
+                                    LOG IN
+                                </button><br><br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><br><br><br>
+
+
+{% endblock %}

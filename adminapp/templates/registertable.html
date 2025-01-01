@@ -1,0 +1,36 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<section class="content">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Registered Users</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table border="2px" style="padding: 20px;text-align: center;width: 100%;background-color: white;">
+          <tr style="color: white;background-color: rgb(202, 22, 19);">
+                <th style="padding: 20px;">NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE NUMBER</th>
+                
+                
+
+            </tr>
+            {% for i in data %}
+            <tr style="padding: 20px;color: black;">
+                <td style="padding: 10px;"><b>{{i.name}}</b></td>
+                <td><b>{{i.email}}</b></td>
+                <td><b>{{i.phone}}</b></td> 
+                
+                
+                
+
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </section>
+  {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'userindex.html' %}
+{% block content %}
+{% load static %}
+
+ 
+
+<div class="single-product mt-150 mb-150">
+    <div class="container" style="max-width: 1140px;">
+        <div class="row d-flex justify-content-center align-items-center" style="width: 100%;">
+            {% for i in data %}
+            <div class="col-md-5 d-flex justify-content-center" style="padding-left: 50px;">
+                <div class="single-product-img" style="border: 0.2px solid #ddd; padding: 15px; border-radius: 8px; background-color: #f9f9f9;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);padding: 20px;">
+                    <img src="{{i.image.url}}" alt="" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div style="margin-left: 100px;" class="single-product-content">
+                    <h2><b>{{i.servicename}}</b></h2><br>
+                    
+                    <p>Salon: {{i.salonname}}</p>
+                    <h2 style="color: black;"><b>${{i.price}}</b></h2><br>
+
+                    <a href="{% url 'book' id=i.id %}"><button class="my-button" style="background-color: #1a91b9; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-size: 16px;"><i class="fas fa-clock" style="margin-right: 8px;"></i>
+                        Book Now
+                    </button><br><br></a>
+                
+                    <p>Share:</p>
+                    <ul class="product-share" style="display: flex; list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-right: 10px;">
+                            <a href="" style="color: #3b5998; font-size: 20px; text-decoration: none;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li style="margin-right: 10px;">
+                            <a href="" style="color: #00acee; font-size: 20px; text-decoration: none;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li style="margin-right: 10px;">
+                            <a href="" style="color: #db4437; font-size: 20px; text-decoration: none;">
+                                <i class="fab fa-google-plus-g"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" style="color: #0077b5; font-size: 20px; text-decoration: none;">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul><br><br>
+                    <p>Get Ready To Glow</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<section class="content">
+    <div class="card">
+      <div class="card-header">
+        <h3 style="text-align: center;" class="card-title">Show Waiting requests</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table width="100%" border="2px" style="padding: 20px;text-align: center;background-color: white;">
+          <tr width="100%" style="color: white;background-color: rgb(244, 28, 28);">
+                <th style="padding: 20px;">NAME</th>
+                <th>PHONE</th>
+                <th>EMAIL</th>
+                
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>SERVICE</th>
+                <th>IMAGE</th>
+               
+                <th>Accept</th>
+                <th>Reject</th>
+
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td style="color: black;padding: 10px;"><b>{{i.userid.name}}</b></td>
+                <td style="color: black;padding: 10px;"><b>{{i.userid.phone}}</b></td>
+                <td style="color: black;padding: 10px;"><b>{{i.userid.email}}</b></td>
+                <td style="color: black;padding: 10px;"><b>{{i.date}}</b></td>
+                <td style="color: black;padding: 10px;"><b>{{i.time}}</b></td>
+                <td style="color: black;padding: 10px;"><b>{{i.serviceid.servicename}}</b></td>
+                <td style="color: black;padding: 10px;"><b><img height="50%" width="50%" src="{{i.serviceid.image.url}}"></b></td>
+                
+               
+                
+                <td style="padding: 10px;"><a href="{% url 'accept' id=i.id %}" class="btn btn-success" style="border-radius: 20px;color: white;">Accept</a></td>
+                <td style="padding: 10px;"><a href="{% url 'reject' id=i.id %}" class="btn btn-danger" style="border-radius: 20px;">Reject</a></td>
+
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </section>
+  {% endblock %}

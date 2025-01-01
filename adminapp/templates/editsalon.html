@@ -1,0 +1,60 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- jquery validation -->
+          <div style="background-color: white;" class="card card-danger">
+            <div class="card-header">
+              <h3 class="card-title">ADD salons</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            {% for i in dat %}
+            <form action="{% url 'updatesal' id=i.id %}" enctype="multipart/form-data" method="post" id="quickForm" novalidate="novalidate">
+                {% csrf_token %}
+              <div class="card-body">
+                <div class="form-group">
+                  <label style="color: black;" for="name">Name</label>
+                  <input type="text" name="sname" value="{{i.name}}" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+                </div>
+                
+                <div class="form-group">
+                    <label style="color: black;" for="branch">Branch</label>
+                    <select name="branchname" value="{{i.name}}" id="branch" class="form-control">
+                      <option value="" enabled selected>Select Branch</option>
+                        {% for i in data %}
+                        <option>{{i.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+              
+              
+                  <div class="form-group">
+                    <label style="color: black;" for="image">Image</label>
+                    <input type="file" name="image" class="form-control" id="exampleInputimage" placeholder="image">
+                  </div>
+                  
+                
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button style="margin-left: 25px;" type="submit" class="btn btn-danger">Submit</button>
+              </div>
+            </form>{% endfor %}
+          </div>
+          <!-- /.card -->
+          </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-6">
+
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+{% endblock %}

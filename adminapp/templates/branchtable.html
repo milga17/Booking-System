@@ -1,0 +1,35 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<section class="content">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Branches</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table border="2px" style="padding: 20px;text-align: center;background-color: white;">
+          <tr style="color: white;background-color: rgb(192, 5, 5);">
+                <th style="padding: 20px;">BRANCH NAME</th>
+                <th>IMAGE</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+                
+                
+
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td style="color: black;"><b>{{i.name}}</b></td>
+                <td><img height="50%" width="50%" style="padding: 5px;" src="{{i.image.url}}"></td>
+                <td style="padding:20px;"><a href="{% url 'editb' id=i.id %}"><button style="background-color: green;color: white;border-radius: 5px;">Edit</button></a></td>
+                <td style="padding:20px;"><a href="{% url 'deleteb' id=i.id %}"><button style="background-color: red;color: white;border-radius: 5px;">Delete</button></a></td>
+
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </section>
+  {% endblock %}
