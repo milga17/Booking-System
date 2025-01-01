@@ -138,3 +138,6 @@ def approvedtable(request):
 def declinedtable(request):
     data=Book.objects.filter(status=2)
     return render(request,'declinedtable.html',{'data':data})
+def declinedtable(request):
+    data=Book.objects.filter(status=2)
+    return render(request,'declinedtable.html',{'data':data})
